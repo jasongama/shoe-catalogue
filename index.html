@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shoe Catalogue</title>
+    <link href="shoeC.css" rel="stylesheet" type="text/css">
+    <link href="simple-grid.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+    <script type="text/x-template" class="KicksTemplate">
+        <tr>
+            <td>{{brand}}</td>
+            <td>{{size}}</td>
+            <td>{{color}}</td> 
+            <td>{{price}}</td>
+            <td>{{stock}}</td>
+            
+          </tr>
+
+    </script>
+</head>
+
+<body>
+
+    <h1>kicks Catalogue</h1>
+    <div class="col-8">
+        <select class="brandStyle">
+            <option value="selects">Select a brand</option>
+            <option value="Nike">Nike</option>
+            <option value="Addas">Addas</option>
+            <option value="Air Jordan">Air Jordan</option>
+            <option value="Fila">Fila</option>
+            <option value="YEEZUS">YEEZUS</option>
+            <option value="Versace">Versace</option>
+            <option value="Johnston and Murphy">Johnston and Murphy</option>
+            <option value="Skechers">Skechers</option>
+            <option value="LeBron">LeBron</option>
+            <option value="Tommy Hilfiger">Tommy Hilfiger</option>
+
+        </select>
+        <select class = "colorStyle">
+            <option value="selects">Select a color</option>
+            <option value="White">White</option>
+            <option value="Blue">Blue</option>
+            <option value="Black">Black</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Gray">Gray</option>
+            <option value="Purple">Purple</option>
+            <option value="Green">Green</option>
+            <option value="Pactic blue">Pactic blue</option>
+            <option value="persian blue">persian blue</option>
+            <option value="Red">Red</option>
+        </select>
+
+        <select class= "sizeStyle">
+            <option value="selects">Select a size</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+            <option value=9>9</option>
+            <option value=10>10</option>
+            <option value=11>11</option>
+            <option value=12>12</option>
+            <option value=13>13</option>
+            <option value=14>14</option>
+        </select>
+    </div>
+    <div class="col-7">
+        <button class="addBtn">Add</button>
+        <button class="filterBtn">Filter</button>
+        <button class="checkButton">Check Button</button>
+        <button class="BasketButton">BasketButton</button>
+    </div>
+    <div class="col-6">
+        <tbody class="Kicks">
+
+        </tbody>
+    </div>
+</body>
+<script src="./shoesLogics.js"></script>
+<script src="./shoes.js"></script>
+
+</html>
