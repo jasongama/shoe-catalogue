@@ -10,7 +10,7 @@
     <link href="simple-grid.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-
+<!-- 
     <script type="text/x-template" class="KicksTemplate">
         <tr>
             <td>{{brand}}</td>
@@ -19,9 +19,8 @@
             <td>{{price}}</td>
             <td>{{stock}}</td>
             
-          </tr>
+          </tr> -->
 
-    </script>
 </head>
 
 <body>
@@ -29,17 +28,13 @@
     <h1>kicks Catalogue</h1>
     <div class="col-8">
         <select class="brandStyle">
-            <option value="selects">Select a brand</option>
-            <option value="Nike">Nike</option>
-            <option value="Addas">Addas</option>
-            <option value="Air Jordan">Air Jordan</option>
-            <option value="Fila">Fila</option>
-            <option value="YEEZUS">YEEZUS</option>
-            <option value="Versace">Versace</option>
-            <option value="Johnston and Murphy">Johnston and Murphy</option>
-            <option value="Skechers">Skechers</option>
-            <option value="LeBron">LeBron</option>
-            <option value="Tommy Hilfiger">Tommy Hilfiger</option>
+                <script type="text/x-template" class="brandTemplate">
+                    <option class="brand" value="brand"></option>
+                    {{#each shoes}}
+                    <option class="brand"value="{{brand}}">{{brand}}</option>
+                    {{each}}
+
+                </script>
 
         </select>
         <select class = "colorStyle">
@@ -71,12 +66,30 @@
         </select>
     </div>
     <div class="col-7">
+            <h3>Add shoes you want</h3>
+            <div>
+            <input type="text" class="brandtext" name="BrandText" value="" placeholder="eg.Nike"> 
+            </div>
+        <div>
+            <input type="text" class="Sizetext" name="shoeText" value="" placeholder="eg.9"> 
+            </div>
+            <div>
+            <input type="text" class="Colortext" name="shoeText" value="" placeholder="eg.red"> 
+        </div>
+            <input type="text" class="Pricetext" name="shoeText" value="" placeholder="eg.R 13445"> 
+        <div>
+            <input type="text" class="" name="stockText" value="" placeholder="eg. 13">
+        </div>
         <button class="addBtn">Add</button>
-        <button class="filterBtn">Filter</button>
-        <button class="checkButton">Check Button</button>
-        <button class="BasketButton">BasketButton</button>
+      
     </div>
     <div class="col-6">
+
+    <button class="filterBtn">Filter</button>
+    <button class="checkButton">Check Button</button>
+    <button class="BasketButton">BasketButton</button>
+    </div>
+    <div class="col-5">
         <tbody class="Kicks">
 
         </tbody>
