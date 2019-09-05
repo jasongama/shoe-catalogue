@@ -8,18 +8,26 @@
     <title>Shoe Catalogue</title>
     <link href="shoeC.css" rel="stylesheet" type="text/css">
     <link href="simple-grid.css" rel="stylesheet" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 <!-- 
     <script type="text/x-template" class="KicksTemplate">
-        <tr>
-            <td>{{brand}}</td>
-            <td>{{size}}</td>
-            <td>{{color}}</td> 
-            <td>{{price}}</td>
-            <td>{{stock}}</td>
+         --><!-- <option class="brand"value="{{brand}}">{{brand}}</option> -->
+          <script type="text/x-template" class="brandTemplate">
+            <!-- <option class="brand" value="brand"></option> -->
+            {{#each filteredShoes}}
             
-          </tr> -->
+            <tr>
+                <td>{{brand}}</td>
+                <td>{{size}}</td>
+                <td>{{color}}</td> 
+                <td>{{price}}</td>
+                <td>{{stock}}</td>
+                
+              </tr>
+            {{/each}}
+
+        </script>
 
 </head>
 
@@ -28,18 +36,22 @@
     <h1>kicks Catalogue</h1>
     <div class="col-8">
         <select class="brandStyle">
-                <script type="text/x-template" class="brandTemplate">
-                    <option class="brand" value="brand"></option>
-                    {{#each shoes}}
-                    <option class="brand"value="{{brand}}">{{brand}}</option>
-                    {{each}}
-
-                </script>
+            <option value="">Select a brand</option>
+            <option value="Nike">Nike</option>
+            <option value="Addas">Addas</option>
+            <option value="">Black</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Gray">Gray</option>
+            <option value="Purple">Purple</option>
+            <option value="Green">Green</option>
+            <option value="Pactic blue">Pactic blue</option>
+            <option value="persian blue">persian blue</option>
+            <option value="Red">Red</option>
 
         </select>
         <select class = "colorStyle">
-            <option value="selects">Select a color</option>
-            <option value="White">White</option>
+            <option value="">Select a color</option>
+            <option value="White">Wite</option>
             <option value="Blue">Blue</option>
             <option value="Black">Black</option>
             <option value="Yellow">Yellow</option>
@@ -52,7 +64,7 @@
         </select>
 
         <select class= "sizeStyle">
-            <option value="selects">Select a size</option>
+            <option value="">Select a size</option>
             <option value=5>5</option>
             <option value=6>6</option>
             <option value=7>7</option>
@@ -71,14 +83,15 @@
             <input type="text" class="brandtext" name="BrandText" value="" placeholder="eg.Nike"> 
             </div>
         <div>
-            <input type="text" class="Sizetext" name="shoeText" value="" placeholder="eg.9"> 
+            <input type="number" class="Sizetext"  placeholder="eg.9"> 
             </div>
             <div>
-            <input type="text" class="Colortext" name="shoeText" value="" placeholder="eg.red"> 
+
+            <input type="text" class="Colortext" name="colorText" value="" placeholder="eg.red"> 
         </div>
-            <input type="text" class="Pricetext" name="shoeText" value="" placeholder="eg.R 13445"> 
+            <input type="number" class="PriceNumber" placeholder="eg.R 13445"> 
         <div>
-            <input type="text" class="" name="stockText" value="" placeholder="eg. 13">
+            <input type="number" class="SizeNUmber"  placeholder="eg. 13">
         </div>
         <button class="addBtn">Add</button>
       
@@ -90,7 +103,7 @@
     <button class="BasketButton">BasketButton</button>
     </div>
     <div class="col-5">
-        <tbody class="Kicks">
+        <tbody class="kicks">
 
         </tbody>
     </div>

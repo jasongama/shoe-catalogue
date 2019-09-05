@@ -6,13 +6,13 @@ const colorElement = document.querySelector(".colorStyle");
 const sizeElement = document.querySelector(".sizeStyle");
 
 var kicksFactory = ShoeFactory();
+
  
-// var KicksTemplate = document.querySelector(".KicksTemplate").innerHTML;
+var KicksTemplate = document.querySelector(".brandTemplate").innerHTML;
 
-// var userTemplate = Handlebars.compile(KicksTemplate);
+var userTemplate = Handlebars.compile(KicksTemplate);
 
-// var userDataElem = document.querySelector(".Kicks");
-
+var userDataElem = document.querySelector(".kicks");
 if(kicksFactory.brand){
     let newShoe = {shoe}
 }
@@ -35,16 +35,12 @@ console.log(sizeElement.value);
 
 
 
-
-
-
-
 function shoesFilters(){
     const currentBrand = brandElement.value;
     const  currentColor = colorElement.value;
     const currentSize = sizeElement.value;
 
-    let filteredShoes=[];
+    var filteredShoes=[];
     if(currentBrand ==="" && currentColor === "" && currentSize ===""){
      filteredShoes =kicksFactory.addedshoes()
     }
@@ -57,9 +53,9 @@ function shoesFilters(){
     filteredShoes =kicksFactory.shoeFliter(shoesStore);
 
   }
-
-
-
+  var userDataElem = userTemplate(filteredShoes)
+  userDataElem.innerHTML = userDataElem;
 }
 
 addBtn.addEventListener("click",brandFunction );
+filterBtn.addEventListener("click",shoesFilters );
