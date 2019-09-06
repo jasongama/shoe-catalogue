@@ -13,17 +13,19 @@ var KicksTemplate = document.querySelector(".brandTemplate").innerHTML;
 var userTemplate = Handlebars.compile(KicksTemplate);
 
 var userDataElem = document.querySelector(".kicks");
-if(kicksFactory.brand){
-    let newShoe = {shoe}
-}
+// if(kicksFactory.brand){
+//     let newShoe = {shoe}
+// }
 
 function brands(list){
-    let shoeTemplate = document.querySelector(".brandTemplate").innerHTML 
+    let shoeTemplate = document.querySelector(".brandTemplates").innerHTML 
     let shoeBrandTemplate= Handlebars.compile(shoeTemplate)
     let printShoes= shoeBrandTemplate(list) 
     document.querySelector(".brand").innerHTML=printShoes;
 }
 function  brandFunction(){
+
+
 
 console.log(brandElement.value);
 console.log(colorElement.value);
@@ -38,19 +40,22 @@ console.log(sizeElement.value);
 function shoesFilters(){
     const currentBrand = brandElement.value;
     const  currentColor = colorElement.value;
-    const currentSize = sizeElement.value;
+    const currentSize = Number(sizeElement.value);
 
     var filteredShoes=[];
+    
     if(currentBrand ==="" && currentColor === "" && currentSize ===""){
-     filteredShoes =kicksFactory.addedshoes()
+     filteredShoes =kicksFactory.addedshoes();
     }
-     else{
-    const shoesStore ={
+    
+    else{
+        const shoesStore ={
         brand: currentBrand,
         color: currentColor,
-        size: currentSize
+        size:  currentSize
     };
-    filteredShoes =kicksFactory.shoeFliter(shoesStore);
+    
+    filteredShoes =kicksFactory.allTheBrands(shoesStore);
 
   }
   var userDataElem = userTemplate(filteredShoes)

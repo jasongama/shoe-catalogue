@@ -107,40 +107,52 @@ function ShoeFactory() {
         return shoes;
     }
 
-    function shoeFliter(kicksFilter) {
-        const filterBrand = kicksFilter.brand;
-        const filterColor = kicksFilter.color;
-        const newShoes = [];
-        if (filterBrand !== undefined && filterColor !== undefined) {
-            for (var i = 0; i < shoes.length; i++) {
-                var currentshoes = shoes[i];
-            }
-            if (currentshoes.brand === filterBrand && currentshoes.color === filterColor) {
-                newShoes.push(currentshoes);
-            } else if (filterBrand !== undefined) {
-                for (var i = 0; i < shoes.length; i++) {
-                    currentshoes = shoes[i];
-                }
-                if (currentshoes.brand === filterBrand) {
-                    newShoes.push(currentshoes)
-                }
-            }else if(filterColor !== undefined){
-                for(var i = 0; i<shoes.length; i++){
-                    currenshoes = shoes[i];
-                }
-                if(currentshoes.color === filterColor){
-                    newShoes.push(currentshoes)
-                }
-            }
-                return newShoes;
-        }
 
-
-    }
+              function sheosBrand(userBrand){
+                  let newbrand = [];
+                  for(var i = 0; i<shoes.length; i++){
+                      if(userBrand == shoes[i].brand){
+                          newbrand.push(shoes[i] )
+                      }
+                  }
+             
+                  return newbrand;
+             }
+             function colorsBrand(colorBrand){
+                var newColor =[];
+                for(var i= 0; i<shoes.length; i++){
+                 if(colorBrand == shoes[i].color){
+                     newColor.push(shoes[i])
+                 }
+                }
+                return newColor
+            }
+            function sizeBrand(brandSize){
+                var newSize=[];
+                for(var i= 0; i<shoes[i].length; i++){
+                    if(brandSize == shoes[i].size){
+                        newSize.push(shoes[i])
+                    }
+                }
+                return newSize
+            }
+            
+                function allTheBrands(){
+                    var allTheNumBrand = [];
+                    for (var i=0; i<shoes.length; i++){
+                        if(userBrand == shoes[i].brand && colorBrand ==shoes[i].color && brandSize == shoes[i].size){
+                            allTheNumBrand.push(shoes[i])
+                        }
+                    }
+                    return allTheNumBrand;
+                }
 
     return {
         addShoes,
         addedshoes,
-        shoeFliter,
+        sheosBrand,
+        colorsBrand,
+        sizeBrand,
+        allTheBrands
     }
-}
+} 
